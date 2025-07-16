@@ -1,0 +1,325 @@
+================================================================================
+QUICK DEMO - EFFICIENT DATA PIPELINE ANALYSIS
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+File path: /Users/alexsandersilveira/Downloads/itineraries.csv
+Encoding: utf-8
+Separator: ','
+Total rows: 92,138,753
+Sample size: 10,000 rows
+Total columns: 27
+File size: 33282.0 MB
+
+COLUMN INFORMATION:
+----------------------------------------
+1. legId
+2. searchDate
+3. flightDate
+4. startingAirport
+5. destinationAirport
+6. fareBasisCode
+7. travelDuration
+8. elapsedDays
+9. isBasicEconomy
+10. isRefundable
+11. isNonStop
+12. baseFare
+13. totalFare
+14. seatsRemaining
+15. totalTravelDistance
+16. segmentsDepartureTimeEpochSeconds
+17. segmentsDepartureTimeRaw
+18. segmentsArrivalTimeEpochSeconds
+19. segmentsArrivalTimeRaw
+20. segmentsArrivalAirportCode
+21. segmentsDepartureAirportCode
+22. segmentsAirlineName
+23. segmentsAirlineCode
+24. segmentsEquipmentDescription
+25. segmentsDurationInSeconds
+26. segmentsDistance
+27. segmentsCabinCode
+
+NULL VALUE ANALYSIS (Sample):
+----------------------------------------
+startingAirport: 24.93% null values
+segmentsEquipmentDescription: 1.65% null values
+totalTravelDistance: 3.86% null values
+segmentsDistance: 0.53% null values
+
+DESCRIPTIVE STATISTICS (Sample):
+----------------------------------------
+
+legId:
+  Type: Categorical
+  Unique values: 10000
+  Top 5 values:
+    9ca0e81111c683bec1012473feefd28f: 1
+    98685953630e772a098941b71906592b: 1
+    98d90cbc32bfbb05c2fc32897c7c1087: 1
+    969a269d38eae583f455486fa90877b4: 1
+    980370cf27c89b40d2833a1d5afc9751: 1
+  Null count: 0
+
+searchDate:
+  Type: Categorical
+  Unique values: 2
+  Top 5 values:
+    2022-04-16: 7,507
+    16-04-2022: 2,493
+  Null count: 0
+
+flightDate:
+  Type: Categorical
+  Unique values: 4
+  Top 5 values:
+    2022-04-17: 6,193
+    17-04-2022: 2,065
+    2022-04-18: 1,314
+    18-04-2022: 428
+  Null count: 0
+
+startingAirport:
+  Type: Categorical
+  Unique values: 16
+  Top 5 values:
+    CLT: 930
+    ATL: 832
+    LAX: 677
+    BOS: 649
+    SFO: 564
+  Null count: 2,493
+
+destinationAirport:
+  Type: Categorical
+  Unique values: 16
+  Top 5 values:
+    LAX: 956
+    LGA: 946
+    BOS: 767
+    DEN: 728
+    DFW: 728
+  Null count: 0
+
+fareBasisCode:
+  Type: Categorical
+  Unique values: 458
+  Top 5 values:
+    VAA0AKEN: 247
+    M0AHZNN1: 232
+    KA0NA0MC: 229
+    G0AIZNN1: 217
+    MA0QA0MQ: 212
+  Null count: 0
+
+travelDuration:
+  Type: Categorical
+  Unique values: 925
+  Top 5 values:
+    PT1H24M: 41
+    PT2H5M: 38
+    PT2H7M: 37
+    PT2H: 36
+    PT5H30M: 35
+  Null count: 0
+
+elapsedDays:
+  Type: Numeric
+  Count: 10,000
+  Mean: 0.14
+  Min: 0.0
+  Max: 1.0
+  Null count: 0
+
+isBasicEconomy:
+  Type: Categorical
+  Unique values: 2
+  Top 5 values:
+    False: 9,851
+    True: 149
+  Null count: 0
+
+isRefundable:
+  Type: Categorical
+  Unique values: 2
+  Top 5 values:
+    False: 9,998
+    True: 2
+  Null count: 0
+
+isNonStop:
+  Type: Categorical
+  Unique values: 2
+  Top 5 values:
+    False: 7,147
+    True: 2,853
+  Null count: 0
+
+baseFare:
+  Type: Numeric
+  Count: 10,000
+  Mean: 367.80
+  Min: 16.0
+  Max: 2687.44
+  Null count: 0
+
+totalFare:
+  Type: Numeric
+  Count: 10,000
+  Mean: 419.45
+  Min: 82.61
+  Max: 2912.6
+  Null count: 0
+
+seatsRemaining:
+  Type: Numeric
+  Count: 10,000
+  Mean: 4.32
+  Min: 0.0
+  Max: 10.0
+  Null count: 0
+
+totalTravelDistance:
+  Type: Numeric
+  Count: 9,614
+  Mean: 1572.87
+  Min: 97.0
+  Max: 3958.0
+  Null count: 386
+
+segmentsDepartureTimeEpochSeconds:
+  Type: Numeric
+  Count: 2,853
+  Mean: 1650237187.84
+  Min: 1650177000.0
+  Max: 1650347520.0
+  Null count: 7,147
+
+segmentsDepartureTimeRaw:
+  Type: Categorical
+  Unique values: 8104
+  Top 5 values:
+    2022-04-17T06:00:00.000-04:00: 36
+    2022-04-17T17:00:00.000-04:00: 25
+    2022-04-17T07:00:00.000-04:00: 21
+    2022-04-17T07:30:00.000-04:00: 17
+    2022-04-17T18:00:00.000-04:00: 17
+  Null count: 0
+
+segmentsArrivalTimeEpochSeconds:
+  Type: Numeric
+  Count: 2,853
+  Mean: 1650247974.03
+  Min: 1650186900.0
+  Max: 1650361380.0
+  Null count: 7,147
+
+segmentsArrivalTimeRaw:
+  Type: Categorical
+  Unique values: 8775
+  Top 5 values:
+    2022-04-17T12:59:00.000-04:00: 8
+    2022-04-17T23:30:00.000-04:00: 8
+    2022-04-17T14:59:00.000-04:00: 7
+    2022-04-17T16:00:00.000-04:00: 7
+    2022-04-17T18:45:00.000-04:00: 6
+  Null count: 0
+
+segmentsArrivalAirportCode:
+  Type: Categorical
+  Unique values: 846
+  Top 5 values:
+    LGA: 295
+    ORD: 274
+    LAX: 248
+    BOS: 241
+    ATL: 225
+  Null count: 0
+
+segmentsDepartureAirportCode:
+  Type: Categorical
+  Unique values: 818
+  Top 5 values:
+    BOS: 395
+    ATL: 387
+    CLT: 293
+    ORD: 234
+    LAX: 198
+  Null count: 0
+
+segmentsAirlineName:
+  Type: Categorical
+  Unique values: 65
+  Top 5 values:
+    American Airlines||American Airlines: 2,167
+    Delta||Delta: 1,592
+    United||United: 1,470
+    American Airlines: 944
+    Delta: 764
+  Null count: 0
+
+segmentsAirlineCode:
+  Type: Categorical
+  Unique values: 65
+  Top 5 values:
+    AA||AA: 2,167
+    DL||DL: 1,592
+    UA||UA: 1,470
+    AA: 944
+    DL: 764
+  Null count: 0
+
+segmentsEquipmentDescription:
+  Type: Categorical
+  Unique values: 915
+  Top 5 values:
+    Airbus A321: 535
+    Boeing 737-800: 463
+    Airbus A321||Airbus A321: 364
+    Boeing 737-800||Boeing 737-800: 344
+    Airbus A321||Boeing 737-800: 222
+  Null count: 165
+
+segmentsDurationInSeconds:
+  Type: Numeric
+  Count: 2,853
+  Mean: 10786.18
+  Min: 2880.0
+  Max: 25080.0
+  Null count: 7,147
+
+segmentsDistance:
+  Type: Numeric
+  Count: 2,800
+  Mean: 1060.08
+  Min: 97.0
+  Max: 2698.0
+  Null count: 7,200
+
+segmentsCabinCode:
+  Type: Categorical
+  Unique values: 16
+  Top 5 values:
+    coach||coach: 6,426
+    coach: 2,746
+    coach||coach||coach: 633
+    first: 87
+    coach||coach||coach||coach: 28
+  Null count: 0
+
+MEMORY EFFICIENCY FEATURES:
+----------------------------------------
+✓ Processed only sample of large file
+✓ Used streaming processing
+✓ Efficient data structures
+✓ No full file loading
+
+PRODUCTION RECOMMENDATIONS:
+----------------------------------------
+1. Use chunked processing for full file
+2. Implement data validation
+3. Add error handling and retries
+4. Monitor memory usage
+5. Consider distributed processing for very large files
