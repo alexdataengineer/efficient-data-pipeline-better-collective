@@ -12,32 +12,7 @@ This project implements a memory-efficient data pipeline for processing large CS
 - **Visualization support**: Creates charts and graphs for data exploration
 - **Professional documentation**: Clear code comments and comprehensive reporting
 
-## Installation
-
-1. Install Python dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-2. Ensure the CSV file is available at the specified path:
-```python
-csv_path = "/Users/alexsandersilveira/Downloads/itineraries.csv"
-```
-
-## Usage
-
-Run the complete analysis pipeline:
-
-```bash
-python data_pipeline.py
-```
-
-## Output
-
-The pipeline generates:
-- `analysis_report.txt`: Comprehensive analysis report
-- `visualizations/`: Directory containing charts and graphs
-- Console output with progress logging
+<img width="1266" height="592" alt="image" src="https://github.com/user-attachments/assets/0d78735e-ceae-45e9-b07d-b1c84f84e930" />
 
 ## Memory Efficiency Features
 
