@@ -11,7 +11,7 @@ This project implements a memory-efficient data pipeline for processing large CS
 - **Comprehensive analysis**: Provides descriptive statistics, null value analysis, and data quality insights
 - **Visualization support**: Creates charts and graphs for data exploration
 - **Professional documentation**: Clear code comments and comprehensive reporting
-
+<img width="1306" height="676" alt="image" src="https://github.com/user-attachments/assets/cec4745a-2c7d-4aa7-b40e-5531d26cc548" />
 <img width="1266" height="592" alt="image" src="https://github.com/user-attachments/assets/0d78735e-ceae-45e9-b07d-b1c84f84e930" />
 
 ## Memory Efficiency Features
