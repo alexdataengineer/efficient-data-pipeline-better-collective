@@ -4,6 +4,11 @@
 
 Successfully developed a revolutionary data processing solution that handles a 33GB CSV file with 92+ million rows while operating within a strict 4GB memory constraint. This solution addresses critical challenges in modern data engineering where traditional approaches fail in memory-constrained environments.
 
+
+<img width="1306" height="676" alt="image" src="https://github.com/user-attachments/assets/e96fad01-1239-4c8b-bfdc-657900055e57" />
+<img width="1266" height="592" alt="image" src="https://github.com/user-attachments/assets/05e16933-48f4-46ed-b187-caebfbc38241" />
+
+
 ## Key Achievement
 
 **98.5% Memory Reduction**: Processed a 33GB file using only 500MB of RAM, achieving a 98.5% reduction in memory usage while maintaining full analytical capabilities.
