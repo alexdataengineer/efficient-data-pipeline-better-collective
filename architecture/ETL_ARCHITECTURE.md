@@ -96,49 +96,50 @@
                                 +--------------------------------------+
                                 |           Extraction Layer           |
                                 |--------------------------------------|
-                                | - Apache Airflow (for batch/jobs)    |
-                                | - Kafka Connect (for streaming)      |
+                                | - Apache Airflow (batch workflows)   |
+                                | - Kafka Connect (real-time ingest)   |
                                 +----------------+---------------------+
                                                  |
                                                  v
-                      +---------------------------------------------------------+
-                      |                  Raw Zone (Bronze Layer)                |
-                      |---------------------------------------------------------|
-                      | - Data Lake (e.g. S3, ADLS)                              |
-                      | - Files: Parquet, JSON, Delta                           |
-                      +----------------+----------------+-----------------------+
-                                       |                |
-                          Batch Path   |                |  Streaming Path
-                                       v                v
-             +--------------------------------+     +-----------------------------+
-             |     Spark Batch Processing     |     | Spark Structured Streaming  |
-             | - Clean & normalize data       |     | - Stream transformation     |
-             +--------------------------------+     +-----------------------------+
-                                       \                /
-                                        \              /
-                                         v            v
-                      +---------------------------------------------------------+
-                      |             Clean Zone (Silver Layer)                  |
-                      |---------------------------------------------------------|
-                      | - Cleaned tables in Data Lake or Snowflake              |
-                      +-------------------------+-------------------------------+
-                                                |
-                                                v
-                                +-------------------------------+
-                                |       dbt Transformations     |
-                                |-------------------------------|
-                                | - SQL models                  |
-                                | - Business logic              |
-                                | - Testing & documentation     |
-                                +---------------+---------------+
-                                                |
-                                                v
-                           +---------------------------------------------+
-                           |           Analytics Zone (Gold Layer)       |
-                           |---------------------------------------------|
-                           | - Snowflake (materialized tables)           |
-                           | - BI-ready (Looker, Power BI, Tableau)      |
-                           +---------------------------------------------+
+                       +------------------------------------------------------+
+                       |                      Data Lake                       |
+                       |------------------------------------------------------|
+                       |           🟤 Bronze Layer (Raw Zone)                 |
+                       |        (files: Parquet, JSON, CSV, Delta)           |
+                       +------------------------------------------------------+
+                                                 |
+                        +------------------------+---------------------------+
+                        |                                                       
+        Batch Path      |                                      Streaming Path
+                        v                                                       
+         +------------------------------+                  +----------------------------+
+         |      Spark Batch Jobs        |                  |   Spark Structured Streaming|
+         | - Cleansing, joins, dedup    |                  | - Enrich events in real-time|
+         +--------------+---------------+                  +---------------+-------------+
+                        |                                                      |
+                        v                                                      v
+       +-------------------------------------+          +------------------------------+
+       |         🟡 Silver Layer (Cleaned)    |          | Kafka (Refined Stream Topic) |
+       |   - Normalized, deduplicated data   |          | - Ready for real-time apps   |
+       +----------------+--------------------+          +------------------------------+
+                        |
+                        v
+        +----------------------------------------+
+        |       dbt Transformations (SQL)        |
+        | - Business logic, testing, lineage     |
+        +----------------+-----------------------+
+                         |
+                         v
+     +--------------------------------------------------+
+     |     🟢 Gold Layer – Snowflake (Analytical)       |
+     |  - Tables for dashboards, KPIs, BI consumption   |
+     +--------------------------------------------------+
+
+                                        ↓
+                           +----------------------------+
+                           |     BI Tools & Consumers   |
+                           |  - Power BI, Looker, etc   |
+                           +----------------------------+
 
 ```
 
